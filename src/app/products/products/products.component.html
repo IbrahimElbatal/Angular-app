@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="category-product col-lg-3 col-md-4 col-sm-6 pl-5">
+        <app-category 
+            [categories]="categories" 
+            [categoryKey]="categoryKey">
+        </app-category>
+    </div>
+
+    <div class="product-card row col-lg-9 col-md-8 col-sm-6">
+        <div 
+            *ngFor="let product of productsByCategory" 
+            class="col-lg-4 col-md-6 col-sm-12">
+            <app-card
+                [showFooter]="true" 
+                [product]="product">
+            </app-card>
+        </div>
+    </div>
+</div>
+

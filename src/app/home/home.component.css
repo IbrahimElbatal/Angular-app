@@ -1,0 +1,51 @@
+.products{
+    margin-top: -70px;
+}
+
+.img-carousel{
+    height: 100vh;
+}
+.trending h3{
+    color: #0a2d61;
+    font-family: 'anton';
+}
+.trending  p{
+    font-size: 21px;
+    font-weight: 700;
+    color: #ff3d97;
+}
+.trending img{
+    border-top-right-radius: 60px;
+    height: 330px;
+}
+.trending img:hover{
+    opacity: 0.7;
+}
+.trending a.btn{
+    font-family: 'anton';
+    font-size: 21px;
+}
+.services h3{
+    font-size: 36px;
+    padding-bottom: 10px;
+    font-family: 'anton';
+}
+.services p{
+    font-size: 21px;
+}
+
+
+@media(max-width:500px){
+    .services img{
+        padding: 20px 0;
+    }   
+    .services h3{
+        font-size: 30px;
+            }
+    .services p{
+        font-size: 18px;
+    }
+    .trending button{
+        font-size: 18px;
+    }   
+}

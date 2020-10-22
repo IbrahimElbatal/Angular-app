@@ -1,0 +1,24 @@
+.img {
+    width: auto;
+    height: 220px;
+    /* height: 300px; */
+}
+.card {
+    margin-bottom: 20px;
+}
+.card-title{
+    font-weight: 700;
+    color: darkblue;
+}
+.card-text{
+    font-weight: 600;
+    color: #ff3d97;
+}
+.card-footer {
+    padding: 0;
+}
+
+.textCenter {
+    text-align: center;
+    top: 10px;
+}

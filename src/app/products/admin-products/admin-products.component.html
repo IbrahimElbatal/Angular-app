@@ -1,0 +1,47 @@
+<div class="container">
+    
+<a 
+  [routerLink]="['/products/create',0]"
+  class="btn btn-primary">
+  New Product</a>
+  <input 
+    name="searchTerm"
+    type="text" 
+    class="form-control"
+    style="margin-top:10px"
+    [(ngModel)]="searchTerm"
+    (input)="filterProducts()">
+<data-table 
+    [items]="items" 
+    [itemCount]="itemCount" 
+    (reload)="reloadProducts($event)">
+    
+    <data-table-column 
+        [property]="'title'" 
+        [header]="'Title'" 
+        [resizable]="true" 
+        [sortable]="true">
+    </data-table-column>
+
+
+    <data-table-column 
+        [property]="'price'" 
+        [header]="'Price'" 
+        [resizable]="true" 
+        [sortable]="true">
+        <ng-template #dataTableCell let-item="item">
+            {{item.price | currency}}
+        </ng-template>
+    </data-table-column>
+
+    <data-table-column 
+        [property]="'id'" 
+        [header]="'Operations'">
+        <ng-template #dataTableCell let-item="item">
+            <a [routerLink]="['/products/create',item.id]">Edit</a>
+        </ng-template>
+    </data-table-column>
+
+</data-table>
+
+</div>

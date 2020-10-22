@@ -1,0 +1,96 @@
+<div class="container">
+<h3 class="alert alert-info">
+    Register
+</h3>
+<div class="col-md-6 offset-md-3">
+
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+
+        <div class="form-group">
+            <label for="email">Name</label>
+            <input ngModel 
+                #name="ngModel" 
+                name="name" 
+                ngModel 
+                type="text"
+                class="form-control"
+                required 
+                maxlength="50"
+                minlength="3"
+                >
+            <div *ngIf="!name.valid && name.touched">
+                <div *ngIf="name?.errors.required" class="alert alert-danger">the name field is required</div>
+                <div *ngIf="name?.errors.minlength" class="alert alert-danger">the name must be more than 3 characters</div>
+                <div *ngIf="name?.errors.maxlength" class="alert alert-danger">the name must be less than 50 characters</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input ngModel 
+                #email="ngModel" 
+                name="email" 
+                ngModel 
+                type="text"
+                class="form-control"
+                required 
+                maxlength="50"
+                pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+                >
+            <div *ngIf="!email.valid && email.touched">
+                <div *ngIf="email?.errors.required" class="alert alert-danger">the email field is required</div>
+                <div *ngIf="email?.errors.pattern" class="alert alert-danger">the email not valid it must contains @,.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input 
+                name="password"
+                ngModel
+                #password="ngModel"
+                type="password"
+                class="form-control"
+                required 
+                minlength="6"
+                >
+            <div *ngIf="!password.valid && password.touched">
+                <div *ngIf="password?.errors.required" class="alert alert-danger">the password field is required</div>
+                <div *ngIf="password?.errors.minlength" class="alert alert-danger">the password must be at least 6 characters</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Confirm Password</label>
+            <input 
+                name="confirmPassword"
+                ngModel
+                #confirmPassword="ngModel"
+                type="password"
+                class="form-control"
+                required 
+                minlength="6"
+                comparePasswordAndConfirmPassword
+                >
+                <div *ngIf="!confirmPassword.valid && confirmPassword.touched">
+                    <div *ngIf="confirmPassword?.errors.required"
+                        class="alert alert-danger">
+                        the confirm confirmPassword field is required.
+                    </div>
+                    <div *ngIf="confirmPassword?.errors.minlength" 
+                        class="alert alert-danger">
+                        the confirm password must be at least 6 characters.
+                    </div>
+                    <div *ngIf="!confirmPassword?.errors.minlength &&!confirmPassword?.errors.required &&confirmPassword?.errors.comparePasswordAndConfirmPassword" 
+                        class="alert alert-danger">
+                        password and confirm password not match.
+                    </div>
+                </div>
+            </div>
+        
+        <button [ngClass]="{'disabled': !form.valid}" class="btn btn-primary" type="submit">Create</button>
+    </form>
+
+    <div *ngIf="errorMessage" class="alert alert-danger">
+        <p>{{errorMessage}}</p>
+    </div>
+</div>
+</div>

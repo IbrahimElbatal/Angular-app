@@ -1,0 +1,14 @@
+a.nav-link,a.navbar-brand{
+    color: white !important;
+    font-size: 18px;
+}
+button.navbar-toggler{
+    background-color: white;
+}
+
+li.nav-item:hover {
+    background: silver;
+}
+.active{
+    background-color: gray;
+}

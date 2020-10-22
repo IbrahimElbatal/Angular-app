@@ -1,0 +1,16 @@
+<div class="list-group">
+  <a 
+      routerLink="/products" 
+      [ngClass]="{active: categoryKey === null}" 
+      class="list-group-item anchor">
+      All Categories
+  </a>
+  <a 
+      *ngFor="let category of categories" 
+      [ngClass]="{active: categoryKey == category.key}" 
+      class="list-group-item anchor" 
+      routerLink="/products" 
+      [queryParams]="{categoryKey : category.key}">
+  {{category.value}}
+</a>
+</div>

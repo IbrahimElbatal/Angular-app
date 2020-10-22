@@ -1,0 +1,52 @@
+<div class="container">
+<h2 class="font-weight-bold">Shopping</h2>
+
+<div class="row">
+    <div class="col-6">
+        <form #orderForm="ngForm" (ngSubmit)="saveOrder()">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input [(ngModel)]="order.name" id="name" name="name" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="address1">Address1</label>
+                <input [(ngModel)]="order.address1" id="address1" name="address1" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="address2">Address2</label>
+                <input [(ngModel)]="order.address2" id="address2" name="address2" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <input [(ngModel)]="order.city" id="city" name="city" type="text" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Place Order</button>
+        </form>
+    </div>
+
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title font-weight-bold">Order Summary</h4>
+                <p class="card-text">You have selected {{items}} items in your shopping cart</p>
+
+                <ul class="list-group">
+                    <ng-container *ngIf="cart">
+                        <li *ngFor="let item of cart.shoppingCart" class="list-group-item">
+                            <span class="pull-left">{{item.quantity}} x {{item.title}}</span>
+                            <span class="pull-right">{{item.price | currency}}</span>
+                        </li>
+                    </ng-container>
+
+                    <li class="list-group-item">
+                        <p style="font-weight: bold;" class="pull-left">Total</p>
+                        <p style="font-weight: bold;" class="pull-right">{{total | currency}}</p>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>

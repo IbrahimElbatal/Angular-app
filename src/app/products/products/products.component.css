@@ -1,0 +1,10 @@
+
+@media only screen and (max-width : 575px){
+    .category-product{
+        padding-left: 15px !important;
+    }
+    .product-card{
+        margin: auto !important;
+        padding-top: 20px;
+    }
+} 

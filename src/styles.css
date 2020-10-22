@@ -1,1 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Anton&display=swap');
+
+body{
+    font-family: 'abel';
+    padding-top: 80px;
+    overflow-x:hidden;
+}
+
+.owl-dots.ng-star-inserted {
+    position: absolute;
+    left: 45%;
+    bottom: 17%;
+}
+
+.owl-theme .owl-dots .owl-dot span{
+    width: 17px;
+    height: 17px;
+    background-color: white;
+}
+.owl-theme .owl-dots .owl-dot .active span{
+    background-color: black;
+}
+
+.owl-theme .owl-nav [class*=owl-prev] {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    visibility: hidden;
+}
+.owl-theme .owl-nav [class*=owl-next] {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    visibility: hidden;
+}
+
+
+.owl-theme .owl-nav [class*=owl-prev]::after {
+    content: '<';
+    visibility: visible;
+}
+
+.owl-theme .owl-nav [class*=owl-next]::before {
+    content: '>';
+    visibility: visible;
+}
+
+.owl-theme .owl-nav [class*=owl-]::after,
+.owl-theme .owl-nav [class*=owl-]::before {
+    font-size: 20px;
+    font-weight: 700;
+    background: gray;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+@media (max-width:580px){
+    .owl-dots.ng-star-inserted {
+        left: 40% !important;
+    }
+    .owl-theme .owl-nav [class*=owl-]::after,
+    .owl-theme .owl-nav [class*=owl-]::before {
+        display: none;
+    }
+}

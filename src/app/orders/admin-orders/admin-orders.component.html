@@ -1,0 +1,50 @@
+<div class="container">
+ 
+  <data-table
+  [items]="items"
+  [itemCount]="itemCount"
+  (reload)="reloadOrders($event)"
+>
+  <data-table-column
+    [property]="'name'"
+    [header]="'Name'"
+    [resizable]="true"
+    [sortable]="true"
+  >
+  </data-table-column>
+
+  <data-table-column
+    [property]="'city'"
+    [header]="'City'"
+    [resizable]="true"
+    [sortable]="true"
+  >
+  </data-table-column>
+ 
+  <data-table-column
+    [property]="'address1'"
+    [header]="'Address 1'"
+    [resizable]="true"
+    [sortable]="true"
+  >
+  </data-table-column>
+
+  <data-table-column
+    [property]="'address2'"
+    [header]="'Address 2'"
+    [resizable]="true"
+    [sortable]="true"
+  >
+  </data-table-column>
+  
+  <data-table-column
+    [property]="'id'"
+    [header]="'Operations'"
+  >
+    <ng-template #dataTableCell let-item="item">
+     <a [routerLink]="['/orders/order-details',item.id]">Details</a>
+    </ng-template>
+  </data-table-column>
+</data-table>
+ 
+</div>

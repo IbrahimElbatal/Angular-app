@@ -1,0 +1,44 @@
+<div class="container">
+  
+<data-table
+  [items]="items"
+  [itemCount]="itemCount"
+  (reload)="reloadOrderDetails($event)">
+
+  <data-table-column
+    [property]="'title'"
+    [header]="'Title'"
+    [resizable]="true"
+    [sortable]="true"
+  >
+  </data-table-column>
+
+  <data-table-column
+    [property]="'categoryKey'"
+    [header]="'Category'"
+    [resizable]="true"
+    [sortable]="true"
+  >
+  </data-table-column>
+
+  <data-table-column
+    [property]="'price'"
+    [header]="'Price'"
+    [resizable]="true"
+    [sortable]="true"
+  >
+  <ng-template #dataTableCell let-item="item">
+    {{item.price | currency}}
+  </ng-template>
+  </data-table-column>
+
+  <data-table-column
+    [property]="'quantity'"
+    [header]="'Quantity'"
+    [resizable]="true"
+    [sortable]="true"
+  >
+  </data-table-column>
+
+</data-table>
+</div>

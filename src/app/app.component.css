@@ -1,0 +1,9 @@
+.footer{
+    background-color: black;
+}
+.footer .col .d-flex i{
+    font-size: 20px;
+}
+.footer .col .d-flex i:hover{
+    color: gray;
+}
